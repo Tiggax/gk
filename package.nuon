@@ -1,0 +1,13 @@
+{
+	name: "gk"
+	version: 0.0.1
+	description: "git keeper, switcher and helper"
+	maintainers: [
+		@Tiggax
+	]
+	dependencies: {
+		nushell: 0.83.0+
+		git: 2.42.0
+	}
+	type: "module"
+}
