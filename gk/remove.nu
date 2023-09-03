@@ -24,7 +24,7 @@ export def main [
       } else {$in}
       | where name == $repo
       | get path.0
-      if (not (confirm prompt $in)) {return "There was no deletion"} else {$in}
+      | if (not (confirm prompt $in)) {return "There was no deletion"} else {$in}
       | rm -r $in
     } catch {|e|
       match $e {
