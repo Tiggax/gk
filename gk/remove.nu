@@ -14,7 +14,6 @@ export def main [
   let index = (get index)
   if (not $only_index) {
     try {
-      if (not (confirm prompt)) {return "There was no deletion"}
       $index
       | if not ($user in $in) {
         return "you dont have any repositories from this user"
@@ -25,6 +24,7 @@ export def main [
       } else {$in}
       | where name == $repo
       | get path.0
+      if (not (confirm prompt $in)) {return "There was no deletion"} else {$in}
       | rm -r $in
     } catch {|e|
       match $e {
