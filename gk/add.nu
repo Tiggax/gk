@@ -55,6 +55,7 @@ export def main [
     $in
     | upsert $data.user [{name: $data.repo path: $data.root}]
   }
+  | to nuon
   | save -f $conf.default_folder
 }
 

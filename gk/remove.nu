@@ -45,5 +45,6 @@ def remove_from_index [user repo] {
       | where name != $repo
     )
   }
+  | to nuon
   | save -f $conf.default_folder
 }
