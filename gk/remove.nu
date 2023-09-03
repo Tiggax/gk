@@ -25,7 +25,14 @@ export def main [
     | get path.0
     | rm -r $in
   } catch {|e|
-    return $"There was an error: ($e)"
+    match $e {
+      {msg: "File(s) not found"} => {
+        print "The folder seems to be already removed, removing the index"
+      },
+      $x => {
+        return $"There was an error:\n($x)"
+      }
+    }
   }
   remove_from_index $user $repo
 }
