@@ -1,6 +1,6 @@
 {
 	name: "gk"
-	version: 0.0.1
+	version: 1.0.0
 	description: "git keeper, switcher and helper"
 	maintainers: [
 		@Tiggax
