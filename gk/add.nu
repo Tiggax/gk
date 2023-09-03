@@ -61,7 +61,12 @@ export def main [
 
 def get_git_root [dir] {
   cd $dir
-  if ($"(git rev-parse --is-inside-work-tree)" == "true") {
+  let is_git = try {
+      git rev-parse --is-inside-work-tree err+out> /dev/null
+    } catch {false}
+    | if ($in == false) {false} else {true}
+      
+  if ($is_git) {
     return { result:"OK" data: {root:$"(git rev-parse --show-toplevel)" url: (git config --get remote.origin.url) }}
   }
   {
@@ -81,4 +86,9 @@ def get_user [] {
   clear
   }
   $user
+}
+
+# copied 
+def get-git-repo-dir [dir: path] {
+  try { git -C $dir rev-parse --show-toplevel err> /dev/null } catch { "" }
 }
