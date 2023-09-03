@@ -59,11 +59,11 @@ def remove_from_index [user repo] {
 }
 
 def "confirm prompt" [path] {
-  print $"This is going to remove (ansi bold)all(ansi reset) files in [($path)]!"
+  print $"This is going to remove (ansi rb)all(ansi reset) files in [($path)]!"
   print $"are you sure you want to proceed?"
   ["yes" "no"] 
   | input list
-  match $in {
+  | match $in {
     "yes" => {true}
     "no" => {false}
   }
