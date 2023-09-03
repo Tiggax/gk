@@ -1,3 +1,4 @@
+# Add an existing Git repository to your paths.
 
 use helpers/get.nu
 

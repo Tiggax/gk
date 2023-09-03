@@ -1,3 +1,4 @@
+# Jump to directory interactively. Similar to `gk to <user> <repo>`
 
 use helpers/get.nu
 

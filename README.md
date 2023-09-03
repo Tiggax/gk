@@ -19,3 +19,15 @@ $env.gk = {
   default_folder: "/path/to/your/save"
 }
 ```
+
+Some of the commands are:
+
+|command|usage|
+|-|-|
+|add|Add an existing Git repository to your paths.|
+|clone|clone a github repository|
+|jump|Jump to directory interactively. Similar to `gk to <user> <repo>`|
+|list|List your git repositories|
+|remove|Module for removing a local Github repository|
+|to|Jump to your desired git repo|
+
