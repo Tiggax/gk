@@ -23,7 +23,7 @@ export def main [
     } else {$in}
     | where name == $repo
     | get path.0
-    | rm -f $in
+    | rm -r $in
   } catch {|e|
     return $"There was an error: ($e)"
   }
