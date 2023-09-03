@@ -54,5 +54,5 @@ export def "github url" [
   user: string
   repo: string
 ] {
-  $"https://github.com/($user)/($repo).git"
+  $"git@github.com:($user)/($repo).git"
 }
