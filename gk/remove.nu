@@ -31,7 +31,6 @@ export def main [
 }
 
 def remove_from_index [user repo] {
-  let conf = (get conf)
   let index = (get index)
   let repos = $index | get $user
 
@@ -46,5 +45,5 @@ def remove_from_index [user repo] {
     )
   }
   | to nuon
-  | save -f $conf.default_folder
+  | save -f (get index path)
 }

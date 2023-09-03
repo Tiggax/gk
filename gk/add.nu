@@ -7,7 +7,6 @@ export def main [
   --myself(-m)    # automaticaly add yourself as the owner if no owner is found.(This works by using the `user.name` var of git)
   ] {
   let index = (get index)
-  let conf = (get conf)
   let dir = if ($dir == $nothing) { (pwd) } else {$dir}
   
   if (not ($dir | path type) == "dir") {
@@ -56,7 +55,7 @@ export def main [
     | upsert $data.user [{name: $data.repo path: $data.root}]
   }
   | to nuon
-  | save -f $conf.default_folder
+  | save -f (get index path)
 }
 
 def get_git_root [dir] {
