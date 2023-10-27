@@ -8,7 +8,7 @@ export def main [
   --myself(-m)    # automaticaly add yourself as the owner if no owner is found.(This works by using the `user.name` var of git)
   ] {
   let index = (get index)
-  let dir = if ($dir == $nothing) { (pwd) } else {$dir}
+  let dir = if ($dir == null) { (pwd) } else {$dir}
   
   if (not ($dir | path type) == "dir") {
     return "you have not provided a directory"

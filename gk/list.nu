@@ -15,7 +15,7 @@ export def main [
   }
 
   $index
-  | if ($user == $nothing) {
+  | if ($user == null) {
     shorthand $in
   } else {
     if ($user in ($index | columns)) {

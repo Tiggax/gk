@@ -3,7 +3,7 @@
 use helpers/get.nu
 
 # Jump to directory interactively. Similar to `gk to <user> <repo>`
-export def-env main [] {
+export def --env main [] {
   let conf = (get conf)
   let index = (get index)
 
