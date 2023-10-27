@@ -4,7 +4,7 @@ use helpers/completions.nu *
 use helpers/get.nu
 
 # Jump to your desired Git reposiory
-export def-env main [
+export def --env main [
   user: string@get_local_user  # Name of the user to jump to
   repo: string@get_local_repo  # Name of the repository to jump to
 ] {
