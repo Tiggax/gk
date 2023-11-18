@@ -6,7 +6,7 @@
 		@Tiggax
 	]
 	dependencies: {
-		nushell: 0.86.0+
+		nushell: 0.87.0+
 		git: 2.42.0
 	}
 	type: "module"
