@@ -43,7 +43,7 @@ def add [
   | if (
     $in
     | get $user -i
-    | default [[name path]; [$nothing $nothing]]
+    | default [[name path]; [null null]]
     | $repo in $in.name
   ) {
     get result "ERROR" ($index | get $user | where name == $repo | get path)
